@@ -172,9 +172,10 @@ i18n.changeLanguage('en'); // 修改语言
 ```js
 ```
 ------------------------
-### 接入百度地图API
+
+### 接入百度地图API - [baiduKey](https://lbs.baidu.com/index.php?title=jspopularGL/guide/getkey)
 ```js
-// 1, html中增加百度地图api, 我的密钥: gIKfppDoOay3qLXTgbT2aZUprumFU2Cf
+// 1, html中增加百度地图api, 我的密钥: 
 <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=您的密钥"></script>
 // - 注意: 直接使用浏览器会报警告(网速好时不影响页面), 2G网的时候会阻止这个js执行(因为chrome Version > 55时,限制document.write写入插件)
 // - 解决: 
@@ -184,7 +185,7 @@ i18n.changeLanguage('en'); // 修改语言
 //     window.BMAP_PROTOCOL = "https";
 //     window.BMapGL_loadScriptTime = (new Date).getTime();
 //     var hs = document.createElement("script");
-//     hs.src = "https://api.map.baidu.com/getscript?type=webgl&v=1.0&ak=gIKfppDoOay3qLXTgbT2aZUprumFU2Cf&services=&t=20220224113913";
+//     hs.src = "https://api.map.baidu.com/getscript?type=webgl&v=1.0&ak={baiduKey}&services=&t=20220224113913";
 //     var s = document.getElementsByTagName("script")[0]; 
 //     s.parentNode.insertBefore(hs, s);
 //     var hl = document.createElement("link");
@@ -196,7 +197,7 @@ i18n.changeLanguage('en'); // 修改语言
 // </script>
 // 或者
 // <script>window.BMAP_PROTOCOL = "https";window.BMapGL_loadScriptTime = (new Date).getTime();</script>
-// <script src="https://api.map.baidu.com/getscript?type=webgl&v=1.0&ak=gIKfppDoOay3qLXTgbT2aZUprumFU2Cf&services=&t=20220224113913"></script>
+// <script src="https://api.map.baidu.com/getscript?type=webgl&v=1.0&ak={baiduKey}&services=&t=20220224113913"></script>
 // <link rel="stylesheet" href="https://api.map.baidu.com/res/webgl/10/bmap.css">
 
 ********************
@@ -214,7 +215,7 @@ export default function WithBaiDuMap (WrappedComponent) {
     }
   }
   NewComponent.displayName = "WithBaiDuMap"; // 给组件重命名
-  return MapApiLoaderHOC({ ak: 'gIKfppDoOay3qLXTgbT2aZUprumFU2Cf' })(NewComponent)
+  return MapApiLoaderHOC({ ak: {baiduKey} })(NewComponent)
 }
 // * 按需引入
 import Map from 'react-bmapgl/Map'
@@ -226,3 +227,7 @@ yarn add react-bmapgl
 ```
 
 ### 
+
+
+---
+[baiduKey]:"gIKfppDoOay3qLXTgbT2aZUprumFU2Cf"

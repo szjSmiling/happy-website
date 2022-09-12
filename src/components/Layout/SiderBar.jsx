@@ -14,9 +14,9 @@ export default function SiderBar() {
     return list.map((menu, idx) => {
       const menuKey = key ? `${key}-${idx}` : idx;
       const menuTo = key ? `${menuList[key].path}/${menu.path}` : menu.path;
-      return menu?.children && menu.children.length > 0 ? (
+      return menu?.items && menu.items.length > 0 ? (
         <SubMenu key={idx} title={menu.title} icon={menu.icon}>
-          {menuDom(menu.children, idx)}
+          {menuDom(menu.items, idx)}
         </SubMenu>
       ) : (
         <Menu.Item key={menuKey} icon={menu.icon}>

@@ -4,13 +4,12 @@ import { Button, Breadcrumb, Avatar } from "antd";
 
 
 import Config from "@components/Layout/Config";
-import Logo from '@/assets/images/szjsmiling.jpg'
 
 
 export default function Header() {
   const user = {
     name: 'szjSmiling',
-    avatar: Logo
+    avatar: `http://101.132.252.31/static/szjsmiling.jpg`
   }
   const navigations = [
     { href: "Home", title: "Home" },

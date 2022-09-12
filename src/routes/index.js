@@ -28,6 +28,7 @@ export default [
       { path: "hometown", element: <MapsHomeTown />, title: '家乡位置', icon: <DesktopOutlined /> },
     ],
   },
+  { path: "" },
   { path: "/404", element: <NotFund />, hidden: true },
   { path: "*", element: <Navigate to="/" />, hidden: true }, // 重定向到404
 ];
